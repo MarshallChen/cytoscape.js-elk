@@ -146,7 +146,6 @@ var makeNode = function makeNode(node, options) {
 
   node.scratch('elk', k);
 
-  console.log('NODE: ', k);
   return k;
 };
 
@@ -260,6 +259,9 @@ Layout.prototype.run = function () {
     nodes.filter(function (n) {
       return !n.isParent();
     }).layoutPositions(layout, options, getPos);
+  }).catch(function (error) {
+    // eslint-disable-next-line
+    console.warn(error);
   });
 
   return this;

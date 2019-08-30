@@ -177,6 +177,9 @@ Layout.prototype.run = function() {
     nodes.filter(function(n){
       return !n.isParent();
     }).layoutPositions( layout, options, getPos );
+  }).catch(error => {
+    // eslint-disable-next-line
+    console.warn(error);
   });
 
   return this;
